@@ -23,7 +23,3 @@ A collection of small CSS practice tasks. Each task has an `.html` file and a `.
 
 1. Keep the `.html` and `.css` files of a task in the same folder.
 2. Open the `.html` file with Live Server or in the browser.
-
-## Author
-
-Bhanusri Manukonda
