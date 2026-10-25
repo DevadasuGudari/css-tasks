@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            color: #fff;
+            background-color: black;
+        }
+
+        h2 {
+            margin: 30px;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .card {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            margin: auto 20px;
+            animation: cube 5s linear 0s infinite alternate-reverse forwards;
+        }
+
+        .card:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes cube {
+            0% {
+                background-color: red;
+                border-radius: 10%;
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                background-color: yellow;
+                border-radius: 30%;
+                top: 0;
+                left: 800px;
+
+            }
+
+            50% {
+                background-color: rgb(26, 242, 26);
+                border-radius: 50%;
+                top: 450px;
+                left: 800px;
+            }
+
+            75% {
+                background-color: rgb(20, 184, 239);
+                border-radius: -30%;
+                top: 450px;
+                left: 0%;
+            }
+
+            100% {
+                background-color: blue;
+                border-radius: -10%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .tooltip {
+            position: absolute;
+            top: -35px;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            cursor: pointer;
+        }
+
+        .tooltiptext {
+            visibility: hidden;
+            width: 130px;
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: lightgray transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .card:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tooltip</h2>
+    <div class="contaner">
+        <div class="card">
+            <div class="tooltip">
+                <span class="tooltiptext">Game End</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#d8d8d8;
+    font-family:Arial, sans-serif;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(8,70px);
+    grid-template-rows:repeat(8,70px);
+    border:5px solid #000;
+}
+
+.square{
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:58px;
+}
+.square:nth-child(16n+1),
+.square:nth-child(16n+3),
+.square:nth-child(16n+5),
+.square:nth-child(16n+7),
+.square:nth-child(16n+10),
+.square:nth-child(16n+12),
+.square:nth-child(16n+14),
+.square:nth-child(16n+16){
+    background:#ffffff;
+}
+.square:nth-child(16n+2),
+.square:nth-child(16n+4),
+.square:nth-child(16n+6),
+.square:nth-child(16n+8),
+.square:nth-child(16n+9),
+.square:nth-child(16n+11),
+.square:nth-child(16n+13),
+.square:nth-child(16n+15){
+    background:#000;
+}
+.white-pawn{
+    color:white;
+    text-shadow:2px 2px 4px black;
+    animation:whiteMove 2s forwards;
+}
+.black-pawn{
+    color:black;
+    text-shadow:1px 1px 2px white;
+    animation:blackMove 2s forwards;
+}
+@keyframes whiteMove{
+    0%{
+        transform:translateY(0);
+        color:black;
+    }
+    100%{
+        transform:translateY(70px);
+        color: white;
+        
+    }
+}
+@keyframes blackMove{
+    0%{
+        transform:translateY(0);
+        color:white;
+    }
+    100%{
+        transform:translateY(70px);
+        color:black;
+    }
+}

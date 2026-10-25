@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+}
+
+.container {
+    perspective: 800px;
+}
+
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* background-image: url(../Images/hardik.webp); */
+    background-image: url(./Images/hardik.png);
+    background-position: center;
+    background-size: cover;
+    transform-style: preserve-3d;
+    animation: cube 4s linear 1s infinite reverse forwards;
+    transition: transform 1s;
+}
+.cube:hover{
+    animation-play-state: paused;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    opacity: 1;
+}
+
+.front {
+    background-color: #ff4d4d;
+    transform: translateZ(120px);
+}
+
+.back {
+    background-color: #0984e3;
+    transform: rotateY(180deg) translateZ(120px);
+}
+
+.right {
+    background-color: #00b894;
+    transform: rotateY(90deg) translateZ(120px);
+}
+
+.left {
+    background-color: #fdcb6e;
+    transform: rotateY(-90deg) translatez(120px);
+}
+
+.top {
+    background-color: #6c5ce7;
+    transform: rotateX(90deg) translateZ(120px);
+}
+
+.bottom {
+    background-color: #e84393;
+    transform: rotateX(-90deg) translateZ(120px);
+}
+
+@keyframes cube {
+
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    25% {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+
+    50% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+
+    75% {
+        transform: rotateX(270deg) rotateY(270deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}

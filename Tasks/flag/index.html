@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .flag {
+            width: 300px;
+            border: 1px solid black;
+            transition: 0.5s;
+        }
+
+        .orange {
+            height: 60px;
+            background: orange;
+        }
+
+        .white {
+            height: 60px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .green {
+            height: 60px;
+            background: green;
+        }
+
+        .chakra {
+            width: 50px;
+            height: 50px;
+            border: 2px solid navy;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+        }
+
+        .chakra {
+            transition: transform 1.5s ease-in-out;
+        }
+
+        .chakra span {
+            position: absolute;
+            width: 1.5px;
+            height: 48px;
+            background: navy;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            margin-top: -24px;
+            margin-left: -0.75px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flag">
+
+        <div class="orange"></div>
+
+        <div class="white">
+            <div class="chakra">
+                <span style="transform: rotate(0deg);"></span>
+                <span style="transform: rotate(15deg);"></span>
+                <span style="transform: rotate(30deg);"></span>
+                <span style="transform: rotate(45deg);"></span>
+                <span style="transform: rotate(60deg);"></span>
+                <span style="transform: rotate(75deg);"></span>
+                <span style="transform: rotate(90deg);"></span>
+                <span style="transform: rotate(105deg);"></span>
+                <span style="transform: rotate(120deg);"></span>
+                <span style="transform: rotate(135deg);"></span>
+                <span style="transform: rotate(150deg);"></span>
+                <span style="transform: rotate(165deg);"></span>
+            </div>
+        </div>
+
+        <div class="green"></div>
+
+    </div>
+
+</body>
+
+</html>

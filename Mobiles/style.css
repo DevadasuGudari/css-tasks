@@ -1,0 +1,1286 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+    }
+
+ body {
+     background-color: #f4f4f4;
+ }
+
+ header {
+     position: fixed;
+     display: flex;
+     width: 100%;
+     height: 90px;
+     background-color: #f4f4f4;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 60px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     z-index: 10;
+ }
+
+ .header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 35px;
+ }
+
+ .header a {
+     text-decoration: none;
+     color: #333;
+     font-size: 17px;
+     font-weight: 600;
+     padding: 8px 0;
+     position: relative;
+     transition: 0.3s ease;
+ }
+
+ .header a:hover {
+     color: rgb(88, 88, 241);
+ }
+
+ .header a.active {
+     color: rgb(88, 88, 241);
+ }
+
+ .header a::after {
+     content: "";
+     position: absolute;
+     left: 0;
+     bottom: -6px;
+     width: 0;
+     height: 3px;
+     background-color: rgb(88, 88, 241);
+     transition: 0.3s;
+ }
+
+ .header a:hover::after,
+ .header a.active::after {
+     width: 100%;
+ }
+
+ .logo {
+     width: 80px;
+     height: 80px;
+     border: 3px solid rgb(88, 88, 241);
+     border-radius: 50%;
+     display: flex;
+     font-size: 17px;
+     justify-content: center;
+     align-items: center;
+     color: transparent;
+     cursor: pointer;
+     background: linear-gradient(90deg,
+             #7b0505,
+             #f96a04,
+             #9933ff,
+             #ff1493,
+             #ff0000);
+
+     background-size: 400% 100%;
+     background-clip: text;
+     color: transparent;
+     animation: colorMove 10s linear infinite;
+     cursor: pointer;
+ }
+
+ @keyframes colorMove {
+     0% {
+         background-position: 0% 50%;
+     }
+
+     100% {
+         background-position: 400% 50%;
+     }
+ }
+
+ .user-menu {
+     position: relative;
+     display: inline-block;
+     cursor: pointer;
+ }
+
+
+ .login-form {
+     display: none;
+     position: absolute;
+     top: 40px;
+     right: 0px;
+     width: 260px;
+     background-color: #fff;
+     padding: 25px;
+     border-radius: 8px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+     z-index: 1;
+ }
+
+ .user-menu:hover .login-form {
+     display: block;
+ }
+
+ .login-form h3 {
+     text-align: center;
+     margin-bottom: 15px;
+ }
+
+ .login-form input {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border-radius: 8px;
+     border: 1px solid #ccc;
+ }
+
+ .login-form button {
+     width: 70px;
+     margin: 5px 70px;
+     text-align: center;
+     padding: 6px;
+     border-radius: 8px;
+     color: #fff;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+ }
+
+ #bars {
+     display: none;
+ }
+
+ .banner {
+     padding: 25px;
+ }
+
+ .banner-image {
+     margin-top: 90px;
+     border-radius: 20px;
+     width: 100%;
+     height: 600px;
+     background-image: url(./Images/banner/pexels-sorjigrey-9956771.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+ }
+
+ .banner-content {
+     position: absolute;
+     top: 40%;
+     left: 80px;
+     color: white;
+     width: 500px;
+     z-index: 1;
+ }
+
+ .banner-content h1 {
+     font-size: 55px;
+     margin-bottom: 20px;
+     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+ }
+
+ .header i {
+     font-size: 20px;
+ }
+
+ .search {
+     position: relative;
+     width: 300px;
+ }
+
+ .search input {
+     width: 100%;
+     padding: 10px 40px 10px 15px;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+     outline: none;
+     font-size: 16px;
+ }
+
+ .search i {
+     position: absolute;
+     right: 15px;
+     top: 33%;
+     color: #777;
+     cursor: pointer;
+ }
+
+ .mobiles h1 {
+     text-align: center;
+     margin: 25px;
+ }
+
+ .mobile-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
+
+ }
+
+ .mobile-card {
+     position: relative;
+     overflow: visible;
+     display: inline-block;
+     background-color: white;
+     border: 1px solid white;
+     margin: 10px 40px;
+     width: 250px;
+     height: 350px;
+     text-align: center;
+     padding: 10px;
+     border-radius: 15px 30px 15px 30px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+     transition: transform 1s ease;
+ }
+
+ .mobile-card:hover {
+     transform: rotateY(180deg);
+ }
+
+ .mobile-card:hover .mobile-card-image {
+     background-image: url(./Images/mobile-products/Samsung\ Galaxy\ Z\ Flip7.webp);
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     transition: all .5s linear;
+ }
+
+ .mobile-card img {
+     /* border-radius: 15px 30px 15px 30px; */
+     width: 80%;
+     height: 170px;
+ }
+
+ .mobile-card-image {
+     width: 80%;
+     height: 170px;
+     background-image: url(./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     /* animation: image 5s ease-in-out  iteration-count direction fill-mode; */
+ }
+
+
+ .mobile-card h2 {
+     font-size: 15px;
+ }
+
+ .mobile-card p {
+     margin: 15px;
+
+     text-align: justify;
+     font-size: 15px;
+     cursor: pointer;
+ }
+
+ .mobile-card button {
+     color: #fff;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+     border: 1px solid lightgray;
+     border-radius: 10px;
+     padding: 10px;
+     margin: 10px 10px;
+ }
+
+ .mobile-card button:hover {
+     text-shadow:
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 2px #fff;
+     ;
+     background: linear-gradient(135deg, #3B536D, #243746);
+     transform: translateY(-4px);
+
+ }
+
+ .mobile-card button a i {
+     text-transform: uppercase;
+     font-size: 10px;
+     color: #f4f4f4;
+     text-decoration: none;
+ }
+
+ .buy-page {
+     display: flex;
+     gap: 60px;
+     padding: 120px 50px 50px;
+     align-items: flex-start;
+     background-color: #fff;
+ }
+
+ .gallery {
+     position: relative;
+     width: 700px;
+     height: 500px;
+ }
+
+ .thumb {
+     display: block;
+     width: 70px;
+     height: 70px;
+     margin-bottom: 12px;
+     object-fit: cover;
+     border: 2px solid #000;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: .3s;
+ }
+
+ .thumb:hover {
+     border-color: #007bff;
+     transform: scale(1.05);
+ }
+
+ .preview {
+     position: absolute;
+     top: 0;
+     left: 100px;
+     width: 500px;
+     height: 500px;
+     border: 2px solid #ddd;
+     border-radius: 10px;
+     background: url("./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     transition: .3s;
+ }
+
+ .t1:hover~.preview {
+     background: url("./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t2:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 4.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t3:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 3.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t4:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 2.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .product-details {
+     width: 820px;
+     padding: 20px;
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+ }
+
+ .product-details h1 {
+     font-size: 30px;
+     color: #222;
+     margin-bottom: 15px;
+ }
+
+ .rating {
+     color: orange;
+     font-size: 18px;
+     margin-bottom: 15px;
+ }
+
+ .rating span {
+     color: gray;
+     font-size: 15px;
+ }
+
+ .price {
+     font-size: 32px;
+     color: #000;
+     margin-bottom: 15px;
+ }
+
+ .price span {
+     font-size: 20px;
+     color: gray;
+     text-decoration: line-through;
+     margin-left: 10px;
+ }
+
+ .discount {
+     color: green;
+     font-weight: bold;
+     margin-bottom: 20px;
+ }
+
+ .product-details h3 {
+     margin: 15px 0 10px;
+     color: #333;
+ }
+
+ .spec-table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 10px;
+ }
+
+ .spec-table td {
+     border: 1px solid #ccc;
+     padding: 10px;
+ }
+
+ .buttons {
+     margin-top: 20px;
+ }
+
+ .buttons button {
+     padding: 12px 25px;
+     margin-right: 10px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+     color: white;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .buttons button:hover {
+     text-shadow:
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 2px #fff;
+     ;
+     background: linear-gradient(135deg, #3B536D, #243746);
+     transform: translateY(-4px);
+ }
+
+footer {
+     width: 100%;
+     background: #111;
+     color: #fff;
+     margin-top: 50px;
+ }
+
+.footer {
+     max-width: 1200px;
+     margin: auto;
+     padding: 20px 30px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 15px;
+ }
+
+.footer p {
+     font-size: 16px;
+     letter-spacing: 0.5px;
+ }
+
+.social-icons {
+     display: flex;
+     gap: 15px;
+ }
+
+.social-icons a {
+     width: 45px;
+     height: 45px;
+     background: #222;
+     color: #fff;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-decoration: none;
+     font-size: 20px;
+     transition: 0.3s ease;
+ }
+
+.social-icons a:hover {
+     background: rgb(68, 68, 244);
+     color: #fff;
+     transform: translateY(-5px) scale(1.1);
+     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+ }
+
+ /* ---------- Buy pages: product galleries (products 2-12) ---------- */
+
+ /* Each product below only has one product photo, so all thumbnails
+ and the preview share it -- swap in extra angle shots later and give
+ them their own pNb/pNc/pNd hover rules the same way .t2/.t3/.t4 work
+ for the S25 Ultra page. */
+
+
+ .preview.p2preview,
+ .p2a:hover~.preview,
+ .p2b:hover~.preview,
+ .p2c:hover~.preview,
+ .p2d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy S25+.jpg");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p3preview,
+ .p3a:hover~.preview,
+ .p3b:hover~.preview,
+ .p3c:hover~.preview,
+ .p3d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy S25.jpg");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p4preview,
+ .p4a:hover~.preview,
+ .p4b:hover~.preview,
+ .p4c:hover~.preview,
+ .p4d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy A56.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p5preview,
+ .p5a:hover~.preview,
+ .p5b:hover~.preview,
+ .p5c:hover~.preview,
+ .p5d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy A36.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p6preview,
+ .p6a:hover~.preview,
+ .p6b:hover~.preview,
+ .p6c:hover~.preview,
+ .p6d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy A26.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p7preview,
+ .p7a:hover~.preview,
+ .p7b:hover~.preview,
+ .p7c:hover~.preview,
+ .p7d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy M47.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p8preview,
+ .p8a:hover~.preview,
+ .p8b:hover~.preview,
+ .p8c:hover~.preview,
+ .p8d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy M16.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p9preview,
+ .p9a:hover~.preview,
+ .p9b:hover~.preview,
+ .p9c:hover~.preview,
+ .p9d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy M17.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p10preview,
+ .p10a:hover~.preview,
+ .p10b:hover~.preview,
+ .p10c:hover~.preview,
+ .p10d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy Z Fold7.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p11preview,
+ .p11a:hover~.preview,
+ .p11b:hover~.preview,
+ .p11c:hover~.preview,
+ .p11d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy Z Flip7.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .preview.p12preview,
+ .p12a:hover~.preview,
+ .p12b:hover~.preview,
+ .p12c:hover~.preview,
+ .p12d:hover~.preview {
+     background: url("./Images/mobile-products/Samsung Galaxy S24 FE.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ /* =========================================================
+    Responsive breakpoints
+    ========================================================= */
+
+ @media (max-width: 992px) {
+     header {
+         padding: 0 20px;
+     }
+
+     .search {
+         width: 180px;
+     }
+
+     .header {
+         position: absolute;
+         top: 90px;
+         left: 0;
+         width: 100%;
+         background-color: #f4f4f4;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 0;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height .3s ease;
+         box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+     }
+
+     .header.open {
+         max-height: 500px;
+         padding: 15px 30px 25px;
+     }
+
+     .header a {
+         padding: 12px 0;
+         width: 100%;
+     }
+
+     #bars {
+         display: block;
+         font-size: 22px;
+         cursor: pointer;
+         color: #333;
+     }
+
+     .banner-content {
+         width: 400px;
+     }
+
+     .banner-content h1 {
+         font-size: 42px;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .search {
+         display: none;
+     }
+
+     .banner-image {
+         height: 380px;
+         background-attachment: scroll;
+     }
+
+     .banner-content {
+         left: 30px;
+         width: 85%;
+     }
+
+     .banner-content h1 {
+         font-size: 32px;
+     }
+
+     .mobile-card {
+         margin: 8px;
+         width: 45%;
+         height: auto;
+         min-height: 320px;
+     }
+
+     .buy-page {
+         flex-direction: column;
+         padding: 110px 20px 40px;
+         gap: 30px;
+     }
+
+     .gallery {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: flex-start;
+         gap: 12px;
+     }
+
+     .thumb {
+         margin-bottom: 0;
+     }
+
+     .preview {
+         position: static;
+         width: 100%;
+         height: 300px;
+         order: 2;
+         margin-top: 12px;
+     }
+
+     .product-details {
+         width: 100%;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .mobile-card {
+         width: 100%;
+     }
+
+     .banner-content {
+         width: 90%;
+         left: 20px;
+     }
+
+     .banner-content h1 {
+         font-size: 26px;
+     }
+
+     .login-form {
+         width: 220px;
+         padding: 18px;
+     }
+
+     .spec-table td {
+         padding: 8px;
+         font-size: 14px;
+     }
+ };
+
+ body {
+     background-color: #f4f4f4;
+ }
+
+ header {
+     position: fixed;
+     display: flex;
+     width: 100%;
+     height: 90px;
+     background-color: #f4f4f4;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 60px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     z-index: 10;
+ }
+
+ .header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 35px;
+ }
+
+ .header a {
+     text-decoration: none;
+     color: #333;
+     font-size: 17px;
+     font-weight: 600;
+     padding: 8px 0;
+     position: relative;
+     transition: 0.3s ease;
+ }
+
+ .header a:hover {
+     color: rgb(88, 88, 241);
+ }
+
+ .header a.active {
+     color: rgb(88, 88, 241);
+ }
+
+ .header a::after {
+     content: "";
+     position: absolute;
+     left: 0;
+     bottom: -6px;
+     width: 0;
+     height: 3px;
+     background-color: rgb(88, 88, 241);
+     transition: 0.3s;
+ }
+
+ .header a:hover::after,
+ .header a.active::after {
+     width: 100%;
+ }
+
+ .logo {
+     width: 80px;
+     height: 80px;
+     border: 3px solid rgb(88, 88, 241);
+     border-radius: 50%;
+     display: flex;
+     font-size: 17px;
+     justify-content: center;
+     align-items: center;
+     color: transparent;
+     cursor: pointer;
+     background: linear-gradient(90deg,
+             #7b0505,
+             #f96a04,
+             #9933ff,
+             #ff1493,
+             #ff0000);
+
+     background-size: 400% 100%;
+     background-clip: text;
+     color: transparent;
+     animation: colorMove 10s linear infinite;
+     cursor: pointer;
+ }
+
+ @keyframes colorMove {
+     0% {
+         background-position: 0% 50%;
+     }
+
+     100% {
+         background-position: 400% 50%;
+     }
+ }
+
+ .user-menu {
+     position: relative;
+     display: inline-block;
+     cursor: pointer;
+ }
+
+
+ .login-form {
+     display: none;
+     position: absolute;
+     top: 40px;
+     right: 0px;
+     width: 260px;
+     background-color: #fff;
+     padding: 25px;
+     border-radius: 8px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+     z-index: 1;
+ }
+
+ .user-menu:hover .login-form {
+     display: block;
+ }
+
+ .login-form h3 {
+     text-align: center;
+     margin-bottom: 15px;
+ }
+
+ .login-form input {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border-radius: 8px;
+     border: 1px solid #ccc;
+ }
+
+ .login-form button {
+     width: 70px;
+     margin: 5px 70px;
+     text-align: center;
+     padding: 6px;
+     border-radius: 8px;
+     color: #fff;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+ }
+
+ #bars {
+     display: none;
+ }
+
+ .banner {
+     padding: 25px;
+ }
+
+ .banner-image {
+     margin-top: 90px;
+     border-radius: 20px;
+     width: 100%;
+     height: 600px;
+     background-image: url(./Images/banner/pexels-sorjigrey-9956771.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+ }
+
+ .banner-content {
+     position: absolute;
+     top: 40%;
+     left: 80px;
+     color: white;
+     width: 500px;
+     z-index: 1;
+ }
+
+ .banner-content h1 {
+     font-size: 55px;
+     margin-bottom: 20px;
+     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+ }
+
+ .header i {
+     font-size: 20px;
+ }
+
+ .search {
+     position: relative;
+     width: 300px;
+ }
+
+ .search input {
+     width: 100%;
+     padding: 10px 40px 10px 15px;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+     outline: none;
+     font-size: 16px;
+ }
+
+ .search i {
+     position: absolute;
+     right: 15px;
+     top: 33%;
+     color: #777;
+     cursor: pointer;
+ }
+
+ .mobiles h1 {
+     text-align: center;
+     margin: 25px;
+ }
+
+ .mobile-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
+
+ }
+
+ .mobile-card {
+     position: relative;
+     overflow: visible;
+     display: inline-block;
+     background-color: white;
+     border: 1px solid white;
+     margin: 10px 40px;
+     width: 250px;
+     height: 350px;
+     text-align: center;
+     padding: 10px;
+     border-radius: 15px 30px 15px 30px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+     transition: transform 1s ease;
+ }
+
+ .mobile-card:hover {
+     transform: rotateY(180deg);
+ }
+
+ .mobile-card:hover .mobile-card-image {
+     background-image: url(./Images/mobile-products/Samsung\ Galaxy\ Z\ Flip7.webp);
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     transition: all .5s linear;
+ }
+
+ .mobile-card img {
+     /* border-radius: 15px 30px 15px 30px; */
+     width: 80%;
+     height: 170px;
+ }
+
+ .mobile-card-image {
+     width: 80%;
+     height: 170px;
+     background-image: url(./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     /* animation: image 5s ease-in-out  iteration-count direction fill-mode; */
+ }
+
+
+ .mobile-card h2 {
+     font-size: 15px;
+ }
+
+ .mobile-card p {
+     margin: 15px;
+
+     text-align: justify;
+     font-size: 15px;
+     cursor: pointer;
+ }
+
+ .mobile-card button {
+     color: #fff;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+     border: 1px solid lightgray;
+     border-radius: 10px;
+     padding: 10px;
+     margin: 10px 10px;
+ }
+
+ .mobile-card button:hover {
+     text-shadow:
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 2px #fff;
+     ;
+     background: linear-gradient(135deg, #3B536D, #243746);
+     transform: translateY(-4px);
+
+ }
+
+ .mobile-card button a i {
+     text-transform: uppercase;
+     font-size: 10px;
+     color: #f4f4f4;
+     text-decoration: none;
+ }
+
+ .buy-page {
+     display: flex;
+     gap: 60px;
+     padding: 120px 50px 50px;
+     align-items: flex-start;
+     background-color: #fff;
+ }
+
+ .gallery {
+     position: relative;
+     width: 700px;
+     height: 500px;
+ }
+
+ .thumb {
+     display: block;
+     width: 70px;
+     height: 70px;
+     margin-bottom: 12px;
+     object-fit: cover;
+     border: 2px solid #000;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: .3s;
+ }
+
+ .thumb:hover {
+     border-color: #007bff;
+     transform: scale(1.05);
+ }
+
+ .preview {
+     position: absolute;
+     top: 0;
+     left: 100px;
+     width: 500px;
+     height: 500px;
+     border: 2px solid #ddd;
+     border-radius: 10px;
+     background: url("./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp");
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     transition: .3s;
+ }
+
+ .t1:hover~.preview {
+     background: url("./Images/mobile-products/Samsung\ Galaxy\ S25\ Ultra.webp");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t2:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 4.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t3:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 3.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .t4:hover~.preview {
+     background: url("./Images/mobile-products/buypage/Samsung\ Galaxy\ S25\ Ultra\ 2.jpg");
+     background-size: 350px;
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+
+ .product-details {
+     width: 820px;
+     padding: 20px;
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+ }
+
+ .product-details h1 {
+     font-size: 30px;
+     color: #222;
+     margin-bottom: 15px;
+ }
+
+ .rating {
+     color: orange;
+     font-size: 18px;
+     margin-bottom: 15px;
+ }
+
+ .rating span {
+     color: gray;
+     font-size: 15px;
+ }
+
+ .price {
+     font-size: 32px;
+     color: #000;
+     margin-bottom: 15px;
+ }
+
+ .price span {
+     font-size: 20px;
+     color: gray;
+     text-decoration: line-through;
+     margin-left: 10px;
+ }
+
+ .discount {
+     color: green;
+     font-weight: bold;
+     margin-bottom: 20px;
+ }
+
+ .product-details h3 {
+     margin: 15px 0 10px;
+     color: #333;
+ }
+
+ .spec-table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 10px;
+ }
+
+ .spec-table td {
+     border: 1px solid #ccc;
+     padding: 10px;
+ }
+
+ .buttons {
+     margin-top: 20px;
+ }
+
+ .buttons button {
+     padding: 12px 25px;
+     margin-right: 10px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, #2C3E50, #1A252F);
+     color: white;
+     font-size: 16px;
+     cursor: pointer;
+ }
+
+ .buttons button:hover {
+     text-shadow:
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 0px #fff,
+         0 0 2px #fff;
+     ;
+     background: linear-gradient(135deg, #3B536D, #243746);
+     transform: translateY(-4px);
+ }
+
+footer {
+     width: 100%;
+     background: #111;
+     color: #fff;
+     margin-top: 50px;
+ }
+
+.footer {
+     max-width: 1200px;
+     margin: auto;
+     padding: 20px 30px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 15px;
+ }
+
+.footer p {
+     font-size: 16px;
+     letter-spacing: 0.5px;
+ }
+
+.social-icons {
+     display: flex;
+     gap: 15px;
+ }
+
+.social-icons a {
+     width: 45px;
+     height: 45px;
+     background: #222;
+     color: #fff;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-decoration: none;
+     font-size: 20px;
+     transition: 0.3s ease;
+ }
+
+.social-icons a:hover {
+     background: rgb(68, 68, 244);
+     color: #fff;
+     transform: translateY(-5px) scale(1.1);
+     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+ }
